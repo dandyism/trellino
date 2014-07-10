@@ -1,0 +1,24 @@
+<h1><%= board.escape("title") %></h1>
+
+<ul class="tiles">
+  <div class="list list-new">
+    <h2>New List</h2>
+    <form id="new-list-form">
+      <label for="list-title">Title</label>
+      <input type="text" name="list[title]" value="" id="list-title">
+  
+      <label for="list_rank">List Rank</label>
+      <input type="text" name="list[rank]" value="" id="list_rank">
+  
+      <input type="hidden" name="list[board_id]" value="<%= board.id %>">
+  
+      <button><span class="glyphicon glyphicon-plus"></span></button>
+    </form>
+  </div>
+</ul>
+
+<!-- <ul>
+<% board.lists().each(function (list) { %>
+  <li><%= list.escape('title') %></li>
+<% }); %>
+</ul> -->

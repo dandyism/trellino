@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Trellino</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Trellino</a>
+      </div>
+      <ul class="nav navbar-right">
+        <li>
+          <% if logged_in? %>
+            <form action="http://localhost:3000/session" class="button_to" id="log-out" method="post"><div><input name="_method" type="hidden" value="delete" /><input class="btn btn-xs btn-warning" type="submit" value="Log out" /><input name="authenticity_token" type="hidden" value="xSAS0j0WmjMHn9GvGLCOWrlD1zrFNkeHyQncsZuTXTo=" /></div></form>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <%= yield %>
+
+</body>
+</html>

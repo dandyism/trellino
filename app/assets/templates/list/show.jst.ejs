@@ -1,0 +1,19 @@
+<h2><%= list.escape("title") %></h2>
+  <div class="close-x">&times;</div>
+<form id="new-card-form">
+  <label for="card-title">Title</label>
+  <input type="text" name="card[title]" value="" id="card-title">
+  
+  <label for="list_rank">Card Rank</label>
+  <input type="text" name="card[rank]" value="" id="list_rank">
+  
+  <label for="card-description">Description</label>
+  <textarea name="card[description]" id="card-description"></textarea>
+  
+  <input type="hidden" name="card[list_id]" value="<%= list.id %>">
+  
+  <button><span class="glyphicon glyphicon-plus"></span></button>
+</form>
+
+<ul id="sortable-cards-<%= list.id %>" class="cards">
+</ul>
